@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F79F9561D5ED38900508B68 /* shops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F79F9551D5ED38900508B68 /* shops.plist */; };
 		3FDC183A1D5C8302001F95BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC18391D5C8302001F95BE /* AppDelegate.swift */; };
 		3FDC183C1D5C8302001F95BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC183B1D5C8302001F95BE /* ViewController.swift */; };
 		3FDC183F1D5C8302001F95BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDC183D1D5C8302001F95BE /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F79F9551D5ED38900508B68 /* shops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shops.plist; sourceTree = "<group>"; };
 		3FDC18361D5C8302001F95BE /* SudokuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SudokuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDC18391D5C8302001F95BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FDC183B1D5C8302001F95BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		3FDC18381D5C8302001F95BE /* SudokuDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3F79F9551D5ED38900508B68 /* shops.plist */,
 				3FDC18391D5C8302001F95BE /* AppDelegate.swift */,
 				3FDC183B1D5C8302001F95BE /* ViewController.swift */,
 				3FDC183D1D5C8302001F95BE /* Main.storyboard */,
@@ -124,6 +127,7 @@
 			files = (
 				3FDC18441D5C8302001F95BE /* LaunchScreen.storyboard in Resources */,
 				3FDC18411D5C8302001F95BE /* Assets.xcassets in Resources */,
+				3F79F9561D5ED38900508B68 /* shops.plist in Resources */,
 				3FDC183F1D5C8302001F95BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +292,7 @@
 				3FDC184A1D5C8302001F95BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,24 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkq-6u-tCK">
-                                <rect key="frame" x="20" y="34" width="100" height="79"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkq-6u-tCK">
+                                <rect key="frame" x="20" y="34" width="74" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="D04-Vn-RbU"/>
-                                    <constraint firstAttribute="height" constant="79" id="sYu-Gx-ys6"/>
+                                    <constraint firstAttribute="width" constant="74" id="D04-Vn-RbU"/>
+                                    <constraint firstAttribute="height" constant="66" id="sYu-Gx-ys6"/>
                                 </constraints>
-                                <state key="normal" title="添加"/>
+                                <state key="normal" image="add"/>
+                                <state key="disabled" image="add_disabled"/>
+                                <state key="highlighted" image="add_highlighted"/>
                                 <connections>
                                     <action selector="buyGoods:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Fa-RQ-DUv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76h-jl-GFl">
-                                <rect key="frame" x="255" y="34" width="100" height="79"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76h-jl-GFl">
+                                <rect key="frame" x="282" y="34" width="73" height="66"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="35M-wZ-szX"/>
-                                    <constraint firstAttribute="width" constant="100" id="CMg-dF-eLV"/>
+                                    <constraint firstAttribute="height" constant="66" id="35M-wZ-szX"/>
+                                    <constraint firstAttribute="width" constant="73" id="CMg-dF-eLV"/>
                                 </constraints>
-                                <state key="normal" title="删除"/>
+                                <state key="normal" image="remove"/>
+                                <state key="disabled" image="remove_disabled"/>
+                                <state key="highlighted" image="remove_highlighted"/>
+                                <connections>
+                                    <action selector="deleteGoods:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qID-LB-6j7"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNb-ju-SfY">
                                 <rect key="frame" x="0.0" y="138" width="375" height="529"/>
@@ -54,7 +61,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="76h-jl-GFl" secondAttribute="trailing" id="i1A-wz-RvZ"/>
                             <constraint firstItem="VNb-ju-SfY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l4f-eB-GLb"/>
                             <constraint firstItem="vkq-6u-tCK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="ohN-sL-hX8"/>
-                            <constraint firstItem="VNb-ju-SfY" firstAttribute="top" secondItem="76h-jl-GFl" secondAttribute="bottom" constant="25" id="sfF-6s-7JY"/>
+                            <constraint firstItem="VNb-ju-SfY" firstAttribute="top" secondItem="76h-jl-GFl" secondAttribute="bottom" constant="38" id="sfF-6s-7JY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VNb-ju-SfY" secondAttribute="trailing" id="tDc-Fy-2Oh"/>
                         </constraints>
                         <variation key="default">
@@ -66,6 +73,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addBtn" destination="vkq-6u-tCK" id="ICx-YM-AMl"/>
+                        <outlet property="deleteBtn" destination="76h-jl-GFl" id="IJR-b8-gOt"/>
                         <outlet property="shoppingCartView" destination="VNb-ju-SfY" id="pPg-Ip-KH7"/>
                     </connections>
                 </viewController>
@@ -74,4 +83,12 @@
             <point key="canvasLocation" x="438.5" y="396.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="128" height="128"/>
+        <image name="add_disabled" width="128" height="128"/>
+        <image name="add_highlighted" width="128" height="128"/>
+        <image name="remove" width="128" height="128"/>
+        <image name="remove_disabled" width="128" height="128"/>
+        <image name="remove_highlighted" width="128" height="128"/>
+    </resources>
 </document>

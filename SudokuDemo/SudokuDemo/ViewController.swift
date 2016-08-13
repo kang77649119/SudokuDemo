@@ -12,13 +12,34 @@ class ViewController: UIViewController {
     
     let screenW = UIScreen.mainScreen().bounds.width
     
+    // 购物车
     @IBOutlet weak var shoppingCartView: UIView!
+    
+    // 添加按钮
+    @IBOutlet weak var addBtn: UIButton!
+    
+    // 删除按钮
+    @IBOutlet weak var deleteBtn: UIButton!
+    
+    // 懒加载数据
+    lazy var shopsData:NSArray? =  {
+    
+        let plistPath = NSBundle.mainBundle().pathForResource("shops", ofType: "plist")
+        return NSArray(contentsOfFile: plistPath!)!
+        
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 监测按钮状态
+        checkStatus()
     }
     
-    
+    /**
+        添加商品
+     */
     @IBAction func buyGoods(sender: UIButton) {
         
         // 每行元素个数
@@ -36,6 +57,8 @@ class ViewController: UIViewController {
         // 购物车中元素个数
         let goodsCount = self.shoppingCartView.subviews.count
         
+        let goodsObj = self.shopsData![goodsCount]
+        
         // 元素间距
         let margin = (screenW - goodsViewLeftMargin * 2 - CGFloat(rowCount) * goodsViewW)  / (CGFloat(rowCount - 1))
         
@@ -47,28 +70,51 @@ class ViewController: UIViewController {
         
         // 生成商品
         let frame = CGRectMake(goodsViewX, goodsViewY, goodsViewW, goodsViewH)
-        createGoodsView(frame)
+        createGoodsView(frame, goodsObj: goodsObj as! NSDictionary)
         
     }
     
     /**
         生成商品
      */
-    func createGoodsView(frame:CGRect) {
+    func createGoodsView(frame:CGRect, goodsObj:NSDictionary) {
         
         let goodsView = UIView(frame: CGRectMake( frame.origin.x , frame.origin.y, frame.size.width, frame.size.height))
-        let goodsImg = UIImageView(image: UIImage(named: "iphone"))
+        let goodsImg = UIImageView(image: UIImage(named: goodsObj["icon"] as! String))
         goodsImg.frame = CGRectMake(0, 0, frame.size.width, frame.size.width)
         
         let goodsLabel = UILabel(frame: CGRectMake( 0, frame.size.width, frame.size.width, frame.size.height - frame.size.width))
-        goodsLabel.text = "iPhone"
+        goodsLabel.textAlignment = .Center
+        goodsLabel.text = goodsObj["name"] as? String
         
         goodsView.addSubview(goodsImg)
         goodsView.addSubview(goodsLabel)
         
         self.shoppingCartView.addSubview(goodsView)
         
+        // 根据购物车中的商品数量控制器 添加按钮状态
+        checkStatus()
+        
     }
+    
+    /**
+        监测添加按钮状态
+     */
+    func checkStatus() {
+        
+        self.addBtn.enabled = (self.shoppingCartView.subviews.count != self.shopsData!.count)
+        self.deleteBtn.enabled = self.shoppingCartView.subviews.count > 0
+    
+    }
+    
+    /**
+        删除商品
+     */
+    @IBAction func deleteGoods(sender: UIButton) {
+        self.shoppingCartView.subviews.last?.removeFromSuperview()
+        checkStatus()
+    }
+    
     
 
     override func didReceiveMemoryWarning() {
