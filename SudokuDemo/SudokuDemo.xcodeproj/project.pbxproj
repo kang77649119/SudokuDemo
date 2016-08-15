@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F7644201D61F7B0007A7145 /* GoodsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F76441F1D61F7B0007A7145 /* GoodsView.xib */; };
+		3F7644221D61F89B007A7145 /* GoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7644211D61F89B007A7145 /* GoodsView.swift */; };
 		3F787DDE1D616AEE001600FF /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F787DDD1D616AEE001600FF /* Shop.swift */; };
 		3F787DE01D618912001600FF /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F787DDF1D618912001600FF /* ShopView.swift */; };
 		3F79F9561D5ED38900508B68 /* shops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F79F9551D5ED38900508B68 /* shops.plist */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F76441F1D61F7B0007A7145 /* GoodsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsView.xib; sourceTree = "<group>"; };
+		3F7644211D61F89B007A7145 /* GoodsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsView.swift; sourceTree = "<group>"; };
 		3F787DDD1D616AEE001600FF /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		3F787DDF1D618912001600FF /* ShopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		3F79F9551D5ED38900508B68 /* shops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shops.plist; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				3FDC18451D5C8302001F95BE /* Info.plist */,
 				3F787DDD1D616AEE001600FF /* Shop.swift */,
 				3F787DDF1D618912001600FF /* ShopView.swift */,
+				3F76441F1D61F7B0007A7145 /* GoodsView.xib */,
+				3F7644211D61F89B007A7145 /* GoodsView.swift */,
 			);
 			path = SudokuDemo;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7644201D61F7B0007A7145 /* GoodsView.xib in Resources */,
 				3FDC18441D5C8302001F95BE /* LaunchScreen.storyboard in Resources */,
 				3FDC18411D5C8302001F95BE /* Assets.xcassets in Resources */,
 				3F79F9561D5ED38900508B68 /* shops.plist in Resources */,
@@ -147,6 +154,7 @@
 			files = (
 				3F787DDE1D616AEE001600FF /* Shop.swift in Sources */,
 				3FDC183C1D5C8302001F95BE /* ViewController.swift in Sources */,
+				3F7644221D61F89B007A7145 /* GoodsView.swift in Sources */,
 				3F787DE01D618912001600FF /* ShopView.swift in Sources */,
 				3FDC183A1D5C8302001F95BE /* AppDelegate.swift in Sources */,
 			);

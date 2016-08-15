@@ -79,37 +79,20 @@ class ViewController: UIViewController {
         // 添加商品
         let goodsObj = self.shopsData![goodsCount] as! Shop
         let goodsFrame = CGRectMake(goodsViewX, goodsViewY, goodsViewW, goodsViewH)
+        
+        // xib形式
+//        let goodsView = GoodsView.goodsView()
+//        goodsView.frame = goodsFrame
+//        goodsView.shop = goodsObj
+//        self.shoppingCartView.addSubview(goodsView)
+        
+        // 代码形式
         let shopView = ShopView.initShopView()
         shopView.frame = goodsFrame
         shopView.shop = goodsObj
         self.shoppingCartView.addSubview(shopView)
         
         // 根据购物车中的商品数量检测按钮状态
-        checkStatus()
-        
-    }
-    
-    /**
-        生成商品
-     */
-    func createGoodsView(frame:CGRect, goodsObj:Shop) {
-        
-        ShopView.initShopView()
-        
-        let goodsView = UIView(frame: CGRectMake( frame.origin.x , frame.origin.y, frame.size.width, frame.size.height))
-        let goodsImg = UIImageView(image: UIImage(named: goodsObj.icon!))
-        goodsImg.frame = CGRectMake(0, 0, frame.size.width, frame.size.width)
-        
-        let goodsLabel = UILabel(frame: CGRectMake( 0, frame.size.width, frame.size.width, frame.size.height - frame.size.width))
-        goodsLabel.textAlignment = .Center
-        goodsLabel.text = goodsObj.name!
-        
-        goodsView.addSubview(goodsImg)
-        goodsView.addSubview(goodsLabel)
-        
-        self.shoppingCartView.addSubview(goodsView)
-        
-        // 根据购物车中的商品数量控制器 添加按钮状态
         checkStatus()
         
     }
@@ -131,8 +114,6 @@ class ViewController: UIViewController {
         self.shoppingCartView.subviews.last?.removeFromSuperview()
         checkStatus()
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

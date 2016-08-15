@@ -30,10 +30,10 @@ class ShopView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let goodsImg = UIImageView(frame: frame)
+        let goodsImg = UIImageView()
         self.goodsImg = goodsImg
         
-        let goodsLabel = UILabel(frame: frame)
+        let goodsLabel = UILabel()
         goodsLabel.textAlignment = .Center
         self.goodsLabel = goodsLabel
         
