@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F787DDE1D616AEE001600FF /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F787DDD1D616AEE001600FF /* Shop.swift */; };
+		3F787DE01D618912001600FF /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F787DDF1D618912001600FF /* ShopView.swift */; };
 		3F79F9561D5ED38900508B68 /* shops.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F79F9551D5ED38900508B68 /* shops.plist */; };
 		3FDC183A1D5C8302001F95BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC18391D5C8302001F95BE /* AppDelegate.swift */; };
 		3FDC183C1D5C8302001F95BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC183B1D5C8302001F95BE /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F787DDD1D616AEE001600FF /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		3F787DDF1D618912001600FF /* ShopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		3F79F9551D5ED38900508B68 /* shops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shops.plist; sourceTree = "<group>"; };
 		3FDC18361D5C8302001F95BE /* SudokuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SudokuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDC18391D5C8302001F95BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				3FDC18401D5C8302001F95BE /* Assets.xcassets */,
 				3FDC18421D5C8302001F95BE /* LaunchScreen.storyboard */,
 				3FDC18451D5C8302001F95BE /* Info.plist */,
+				3F787DDD1D616AEE001600FF /* Shop.swift */,
+				3F787DDF1D618912001600FF /* ShopView.swift */,
 			);
 			path = SudokuDemo;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F787DDE1D616AEE001600FF /* Shop.swift in Sources */,
 				3FDC183C1D5C8302001F95BE /* ViewController.swift in Sources */,
+				3F787DE01D618912001600FF /* ShopView.swift in Sources */,
 				3FDC183A1D5C8302001F95BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

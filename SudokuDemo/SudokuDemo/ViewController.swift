@@ -25,7 +25,17 @@ class ViewController: UIViewController {
     lazy var shopsData:NSArray? =  {
     
         let plistPath = NSBundle.mainBundle().pathForResource("shops", ofType: "plist")
-        return NSArray(contentsOfFile: plistPath!)!
+        
+        let array = NSArray(contentsOfFile: plistPath!)
+        var shopsArray = NSMutableArray()
+        for shopInfo in array! {
+            
+            // 字典转模型
+            let shop = Shop.ShopInitWithDict(shopInfo as! NSDictionary)
+            shopsArray.addObject(shop)
+            
+        }
+        return shopsArray
         
     }()
     
@@ -57,8 +67,6 @@ class ViewController: UIViewController {
         // 购物车中元素个数
         let goodsCount = self.shoppingCartView.subviews.count
         
-        let goodsObj = self.shopsData![goodsCount]
-        
         // 元素间距
         let margin = (screenW - goodsViewLeftMargin * 2 - CGFloat(rowCount) * goodsViewW)  / (CGFloat(rowCount - 1))
         
@@ -68,24 +76,33 @@ class ViewController: UIViewController {
         // 元素Y坐标 （取余）
         let goodsViewY:CGFloat = CGFloat(goodsCount / rowCount) * (goodsViewH + goodsViewLeftMargin)
         
-        // 生成商品
-        let frame = CGRectMake(goodsViewX, goodsViewY, goodsViewW, goodsViewH)
-        createGoodsView(frame, goodsObj: goodsObj as! NSDictionary)
+        // 添加商品
+        let goodsObj = self.shopsData![goodsCount] as! Shop
+        let goodsFrame = CGRectMake(goodsViewX, goodsViewY, goodsViewW, goodsViewH)
+        let shopView = ShopView.initShopView()
+        shopView.frame = goodsFrame
+        shopView.shop = goodsObj
+        self.shoppingCartView.addSubview(shopView)
+        
+        // 根据购物车中的商品数量检测按钮状态
+        checkStatus()
         
     }
     
     /**
         生成商品
      */
-    func createGoodsView(frame:CGRect, goodsObj:NSDictionary) {
+    func createGoodsView(frame:CGRect, goodsObj:Shop) {
+        
+        ShopView.initShopView()
         
         let goodsView = UIView(frame: CGRectMake( frame.origin.x , frame.origin.y, frame.size.width, frame.size.height))
-        let goodsImg = UIImageView(image: UIImage(named: goodsObj["icon"] as! String))
+        let goodsImg = UIImageView(image: UIImage(named: goodsObj.icon!))
         goodsImg.frame = CGRectMake(0, 0, frame.size.width, frame.size.width)
         
         let goodsLabel = UILabel(frame: CGRectMake( 0, frame.size.width, frame.size.width, frame.size.height - frame.size.width))
         goodsLabel.textAlignment = .Center
-        goodsLabel.text = goodsObj["name"] as? String
+        goodsLabel.text = goodsObj.name!
         
         goodsView.addSubview(goodsImg)
         goodsView.addSubview(goodsLabel)
